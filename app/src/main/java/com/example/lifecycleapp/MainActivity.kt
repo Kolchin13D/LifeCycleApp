@@ -1,6 +1,7 @@
 package com.example.lifecycleapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -30,6 +31,13 @@ class MainActivity : AppCompatActivity() {
         btn.setOnClickListener() {
             var intent: Intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("name", "Dmitry")
+            startActivity(intent)
+        }
+
+        val btn2: Button = findViewById(R.id.btn2)
+        btn2.setOnClickListener() {
+            intent = Intent(Intent.ACTION_VIEW)
+            intent.setData(Uri.parse("https://www.google.com"))
             startActivity(intent)
         }
 
