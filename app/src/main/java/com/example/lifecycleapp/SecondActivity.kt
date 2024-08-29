@@ -1,6 +1,7 @@
 package com.example.lifecycleapp
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,6 +19,9 @@ class SecondActivity : AppCompatActivity() {
             insets
         }
 
-
+        val text2: TextView = findViewById(R.id.textView2)
+        val bundle: Bundle? = intent.extras
+        val name = bundle?.getString("name")
+        text2.setText("$name, welcome to \n second page")
     }
 }
